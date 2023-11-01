@@ -28,4 +28,8 @@ APP.get("/form", (req, res) => {
     res.sendFile(__dirname + "/views/form.html");
 });
 
+APP.get("/:word/echo", (req, res) => {
+    res.json({ "echo": req.params.word });
+});
+
 APP.listen(PORT, () => console.log(`Listening on ${PORT}`));
