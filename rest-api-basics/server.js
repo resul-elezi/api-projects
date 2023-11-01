@@ -19,8 +19,13 @@ APP.use((req, res, next) => {
     console.log(`${req.method} ${req.path} - ${req.ip}`);
     next();
 });
+APP.use(EXPRESS.static("public"));
+APP.use(EXPRESS.static("css"));
 APP.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/index.html");
+});
+APP.get("/form", (req, res) => {
+    res.sendFile(__dirname + "/views/form.html");
 });
 
 APP.listen(PORT, () => console.log(`Listening on ${PORT}`));
