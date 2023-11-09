@@ -32,4 +32,8 @@ APP.get("/:word/echo", (req, res) => {
     res.json({ "echo": req.params.word });
 });
 
+APP.all("*", (req, res) => {
+    res.send("Invalid route");
+});
+
 APP.listen(PORT, () => console.log(`Listening on ${PORT}`));
