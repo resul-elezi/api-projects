@@ -21,6 +21,11 @@ APP.use((req, res, next) => {
 });
 APP.use(EXPRESS.static("public"));
 APP.use(EXPRESS.static("css"));
+
+const TIME_ROUTES = require("./routes/time");
+
+APP.use("/routes/time", TIME_ROUTES);
+
 APP.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/index.html");
 });
