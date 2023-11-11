@@ -23,8 +23,10 @@ APP.use(EXPRESS.static("public"));
 APP.use(EXPRESS.static("css"));
 
 const TIME_ROUTES = require("./routes/time");
+const NAME_ROUTES = require("./routes/name");
 
 APP.use("/routes/time", TIME_ROUTES);
+APP.use("/routes/name", NAME_ROUTES);
 
 APP.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/index.html");
