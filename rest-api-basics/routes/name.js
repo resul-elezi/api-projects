@@ -6,7 +6,7 @@ ROUTER.route("/")
     .post(nameReply)
 
 function nameReply(req, res) {
-    const METHOD = req.METHOD;
+    const METHOD = req.method;
     const FIRST_NAME = METHOD === "GET" ? req.query.first : req.body.first;
     const LAST_NAME = METHOD === "GET" ? req.query.last : req.body.last;
 
