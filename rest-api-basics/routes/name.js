@@ -21,7 +21,7 @@ function nameReply(req, res) {
             res.send(html);
         },
         "application/json": () => {
-            res.json({"name": `${FIRST_NAME} ${LAST_NAME}`});
+            res.json({ "name": `${FIRST_NAME} ${LAST_NAME}` });
         },
         "default": () => {
             res.status(406).send("Not Acceptable");

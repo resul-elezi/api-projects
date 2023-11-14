@@ -14,7 +14,7 @@ APP.options("*", (req, res, next) => {
 });
 
 APP.use(EXPRESS.json());
-APP.use(EXPRESS.urlencoded({ extended: false}));
+APP.use(EXPRESS.urlencoded({ extended: false }));
 APP.use((req, res, next) => {
     console.log(`${req.method} ${req.path} - ${req.ip}`);
     next();
