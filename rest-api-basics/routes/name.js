@@ -5,6 +5,10 @@ ROUTER.route("/")
     .get(nameReply)
     .post(nameReply)
 
+    ROUTER.get("/about", (req, res) => {
+        res.send("The /routes/name endpoint sends back the first and last name you send in your request.")
+    });
+
 function nameReply(req, res) {
     const METHOD = req.method;
     const FIRST_NAME = METHOD === "GET" ? req.query.first : req.body.first;
