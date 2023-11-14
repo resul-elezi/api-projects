@@ -24,9 +24,13 @@ APP.use(EXPRESS.static("css"));
 
 const TIME_ROUTES = require("./routes/time");
 const NAME_ROUTES = require("./routes/name");
+const JSON_ROUTES = require("./routes/json");
+const ECHO_ALL_ROUTES = require("./routes/echo-all");
 
 APP.use("/routes/time", TIME_ROUTES);
 APP.use("/routes/name", NAME_ROUTES);
+APP.use("/routes/json", JSON_ROUTES);
+APP.use("/routes/echo-all", ECHO_ALL_ROUTES);
 
 APP.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/index.html");
